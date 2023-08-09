@@ -13,6 +13,6 @@ jobs:
       - name: Publish provider contract 
       - uses: pactflow/actions/publish-provider-contract@v1.0.1
         env:
-          oas_file: src/oas/user.yml
+          oas_file: src/api-docs.yml
           results_file: src/results/report.md
           EXIT_CODE: 1
