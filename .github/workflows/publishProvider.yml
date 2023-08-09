@@ -1,0 +1,18 @@
+env:
+  version: "1.2.3"
+  application_name: "my-api-provider"
+  PACT_BROKER_BASE_URL: https://galwayse.pactflow.io
+  PACT_BROKER_TOKEN: 9rHjtK3ssQ-kXAC2qAZW9A
+
+jobs:
+  pact-publish-oas-action:
+    runs-on: ubuntu-latest
+    steps:
+      # MANDATORY: Must use 'checkout' first
+      - uses: actions/checkout@v2
+      - name: Publish provider contract 
+      - uses: pactflow/actions/publish-provider-contract@v1.0.1
+        env:
+          oas_file: src/oas/user.yml
+          results_file: src/results/report.md
+          EXIT_CODE: 1
